@@ -7,11 +7,17 @@ class Category(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
 
+    def __str__(self):
+        return self.title
+
 class Job(models.Model):
     title = models.CharField(max_length=100)
     employer = models.ForeignKey(Employer, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     published_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
 
 class Detail(models.Model):
     HOME = 'H'
@@ -36,9 +42,12 @@ class Detail(models.Model):
     description = models.TextField(blank=True, null=True)
     workplace = models.CharField(choices=WORKPLACE_CHOICES, max_length=10, default=OFFICE)
     status = models.CharField(choices=STATUS_CHOICES, max_length=10, default=FULL)
-    locations = models.CharField(max_length=250)
-    min_salary = models.PositiveIntegerField(MinValueValidator(1000))
-    deadline = models.DateTimeField()
+    locations = models.CharField(max_length=250, blank=True, null=True)
+    min_salary = models.PositiveIntegerField(validators=[MinValueValidator(1000)], blank=True, null=True)
+    deadline = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return f"Details of {self.job.title}"
 
 
 class Requirement(models.Model):
@@ -53,7 +62,7 @@ class Requirement(models.Model):
         (MASTER, 'Master'),
     ]
 
-    job = models.OneToOneField(Job, on_delete=models.CASCADE, related_name='requirement')
-    education = models.CharField(choices=EDUCATION_CHOICES, max_length=10)
-    experience = models.PositiveIntegerField(validators=[MaxValueValidator(30)])
+    job = models.OneToOneField(Job, on_delete=models.CASCADE, related_name='requirements')
+    education = models.CharField(choices=EDUCATION_CHOICES, default=JSC, max_length=10,)
+    experience = models.PositiveIntegerField(validators=[MaxValueValidator(30)], blank=True, null=True)
     skill = models.CharField(blank=True, null=True, max_length=200)
