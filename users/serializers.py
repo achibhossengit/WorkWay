@@ -1,9 +1,10 @@
 from rest_framework.serializers import ModelSerializer
-from djoser.serializers import UserCreateSerializer
+from rest_framework import serializers
+from djoser.serializers import UserCreateSerializer, UserSerializer
 from users.models import CustomUser, Employer, JobSeeker
 
 class CustomCreateUserSerializer(UserCreateSerializer):
-    
+
     def create(self, validated_data):
         instance = super().create(validated_data)
         if instance.user_type == 'Employer':
@@ -13,6 +14,7 @@ class CustomCreateUserSerializer(UserCreateSerializer):
         return instance
     
 class JobSeekerProfileSerializer(ModelSerializer):
+    resume = serializers.ImageField(required=False)
     class Meta:
         model = JobSeeker
         fields = ['gender', 'resume']
@@ -33,10 +35,11 @@ class EmployerProfileSerializer(ModelSerializer):
 class CustomUserSerializer(ModelSerializer):
     jobseeker = JobSeekerProfileSerializer()
     employer = EmployerProfileSerializer()
+    profile_picture = serializers.ImageField()
 
     class Meta:
         model = CustomUser
-        fields = ['id', 'username', 'first_name', 'last_name', 'email','user_type', 'jobseeker', 'employer']
+        fields = ['id', 'username', 'email', 'first_name', 'last_name','user_type','profile_picture', 'jobseeker', 'employer']
         read_only_fields = ['user_type']
 
     def update(self, instance, validated_data):
