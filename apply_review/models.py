@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.db import models
 from jobs.models import Job
 from users.models import JobSeeker, Employer
@@ -19,6 +20,8 @@ class Application(models.Model):
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default=PEDING)
     applied_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        unique_together = ('job', 'jobseeker')  # Add unique constraint
 
     def __str__(self):
         return f"Application for jobs id: {self.job.id}"
