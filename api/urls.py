@@ -47,11 +47,14 @@ job_router.register('applications', ApplicationViewSetForEmployer, basename='emp
 
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('', include(category_router.urls)),
-    path('', include(jobseeker_router.urls)),
-    path('', include(employer_router.urls)),
-    path('', include(job_router.urls)),
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+   path('', include(router.urls)),
+   path('', include(category_router.urls)),
+   path('', include(jobseeker_router.urls)),
+   path('', include(employer_router.urls)),
+   path('', include(job_router.urls)),
+   path('api-auth/', include('rest_framework.urls')),
+   path('auth/', include('djoser.urls')),
+   path('auth/', include('djoser.urls.jwt')),
+   path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+   path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
