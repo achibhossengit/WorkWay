@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.core.validators import FileExtensionValidator
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 class CustomUser(AbstractUser):
@@ -12,7 +13,7 @@ class CustomUser(AbstractUser):
     )
     email = models.EmailField(unique=True)
     user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES, default=JOBSEEKER)
-    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
+    profile_picture = CloudinaryField('profile_pictures', blank=True, null=True)
     contact_number = models.CharField(max_length=15, blank=True, null=True)
 
     REQUIRED_FIELDS = ['email', 'user_type']  # These fields are mandatory for user creations
