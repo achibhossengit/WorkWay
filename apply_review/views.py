@@ -4,6 +4,8 @@ from apply_review.models import Application, Review
 from users.models import JobSeeker
 from apply_review.serializers import ApplicationSerializer, ReviewSerializer, ApplicationSerializerForEmployer
 from api.permissions import IsEmployerOwnerOrAdminReadonly, IsJobseekerOwnerOrAdminReadonly
+
+
 class ApplicationViewSetForJobseeker(ModelViewSet):
     permission_classes = [IsAuthenticated, IsJobseekerOwnerOrAdminReadonly]
     serializer_class = ApplicationSerializer
