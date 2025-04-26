@@ -4,3 +4,4 @@ db.sqlite3
 work_de
 work_le
 .env
+fixtures

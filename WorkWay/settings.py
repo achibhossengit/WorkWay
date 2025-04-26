@@ -13,10 +13,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-71&$x%*omh(z_nq32)ad&(6a7kymxaz7f@zu^+utg14bs)e0m%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 AUTH_USER_MODEL = 'users.CustomUser'
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -65,7 +64,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'WorkWay.wsgi.application'
+WSGI_APPLICATION = 'WorkWay.wsgi.app'
 
 
 # Database
