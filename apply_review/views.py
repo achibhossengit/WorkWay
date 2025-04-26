@@ -24,7 +24,7 @@ class ApplicationViewSetForJobseeker(ModelViewSet):
         context = super().get_serializer_context()
         if self.request.user.is_staff:
             context['job_seeker'] = self.kwargs.get('jobseeker_pk')
-        else:
+        elif self.request.user.is_authenticated:
             context['job_seeker'] = self.request.user.jobseeker
         return context
 
@@ -60,7 +60,8 @@ class ReviewViewSetForJobseeker(ModelViewSet):
 
     def get_serializer_context(self):
         context = super().get_serializer_context()
-        context['jobseeker'] = JobSeeker.objects.get(pk=self.kwargs.get('jobseeker_pk'))
+        if 'jobseeker_pk' in self.kwargs:
+            context['jobseeker'] = JobSeeker.objects.get(pk=self.kwargs.get('jobseeker_pk'))
         return context
 
 
