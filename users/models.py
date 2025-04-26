@@ -37,3 +37,6 @@ class JobSeeker(models.Model):
     user = models.OneToOneField(CustomUser, primary_key=True, on_delete=models.CASCADE, related_name='jobseeker')
     gender = models.CharField(max_length=20, choices=GENDER_CHOICES, default=OTHERS)
     resume = models.FileField(upload_to='resumes/', validators=[FileExtensionValidator(['jpg', 'png', 'jpeg', 'pdf'])], blank=True, null=True)
+
+    def __str__(self):
+        return self.user.username

@@ -15,10 +15,13 @@ class Application(models.Model):
     ]
 
     job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='applications')
-    job_seeker = models.ForeignKey(JobSeeker, on_delete=models.CASCADE, related_name='applications')
+    jobseeker = models.ForeignKey(JobSeeker, on_delete=models.CASCADE, related_name='applications')
     status = models.CharField(max_length=1, choices=STATUS_CHOICES, default=PEDING)
     applied_at = models.DateTimeField(auto_now_add=True)
 
+
+    def __str__(self):
+        return f"Application for jobs id: {self.job.id}"
 
 class Review(models.Model):
     employer = models.ForeignKey(Employer, on_delete=models.CASCADE, related_name='reviews')
