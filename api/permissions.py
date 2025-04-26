@@ -33,10 +33,10 @@ class IsEmployerOrReadOnly(BasePermission):
             
         return False
     
-class IsJobseekerOrAdminReadonly(BasePermission):
+class IsJobseekerOrAdminDeleteOnly(BasePermission):
     def has_permission(self, request, view):
         if request.user.is_staff:
-            return view.action in ['list', 'retrieve']
+            return view.action in ['list', 'retrieve', 'destroy']
         if request.user.user_type == 'Jobseeker':
             return True
         
@@ -45,14 +45,14 @@ class IsJobseekerOrAdminReadonly(BasePermission):
     def has_object_permission(self, request, view, obj):
         print('it is from has object permissions')
         if request.user.is_staff:
-            return view.action in ['list', 'retrieve']
+            return view.action in ['list', 'retrieve', 'destroy']
         
         return request.user.id == int(view.kwargs.get('pk'))
     
-class IsEmployerOrAdminReadonly(BasePermission):
+class IsEmployerOrAdminDeleteOnly(BasePermission):
     def has_permission(self, request, view):
         if request.user.is_staff:
-            return view.action in ['list', 'retrieve']
+            return view.action in ['list', 'retrieve', 'destroy']
         if request.user.user_type == 'Employer':
             return True
         
@@ -60,7 +60,7 @@ class IsEmployerOrAdminReadonly(BasePermission):
     
     def has_object_permission(self, request, view, obj):
         if request.user.is_staff:
-            return view.action in ['list', 'retrieve']
+            return view.action in ['list', 'retrieve', 'destroy']
         
         return request.user.id == int(view.kwargs.get('pk'))
 

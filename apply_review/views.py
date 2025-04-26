@@ -7,12 +7,19 @@ from api.permissions import IsEmployerOwnerOrAdminReadonly, IsJobseekerOwnerOrAd
 
 
 class ApplicationViewSetForJobseeker(ModelViewSet):
+    """
+    A viewset for managing applications submitted by a jobseeker.
+
+    - GET: Retrieve applications for a specific jobseeker.
+    - PUT/PATCH: Update an application (Only application creator).
+    - DELETE: Delete an application (Only applicaton creator).
+    """
     permission_classes = [IsAuthenticated, IsJobseekerOwnerOrAdminReadonly]
     serializer_class = ApplicationSerializer
 
     def get_queryset(self):
-        return Application.objects.filter(jobseeker = self.kwargs.get('jobseeker_pk'))
-    
+        return Application.objects.filter(jobseeker=self.kwargs.get('jobseeker_pk'))
+
     def get_serializer_context(self):
         context = super().get_serializer_context()
         if self.request.user.is_staff:
@@ -20,21 +27,36 @@ class ApplicationViewSetForJobseeker(ModelViewSet):
         else:
             context['job_seeker'] = self.request.user.jobseeker
         return context
-    
+
+
 class ApplicationViewSetForEmployer(ModelViewSet):
+    """
+    A viewset for managing applications related to jobs posted by an employer.
+
+    - GET: Retrieve applications for a specific job.
+    - PUT/PATCH: Update only status of application (Job creator only).
+    """
     http_method_names = ['get', 'put', 'patch', 'head', 'options']
     permission_classes = [IsAuthenticated, IsEmployerOwnerOrAdminReadonly]
     serializer_class = ApplicationSerializerForEmployer
 
     def get_queryset(self):
-        return Application.objects.filter(job = self.kwargs.get('job_pk'))
+        return Application.objects.filter(job=self.kwargs.get('job_pk'))
 
 
 class ReviewViewSetForJobseeker(ModelViewSet):
+    """
+    A viewset for managing reviews send by a jobseeker.
+
+    - GET: Retrieve reviews for a specific jobseeker.
+    - PUT/PATCH: Update a review (Creator Only).
+    - DELETE: Delete a review (Creator Only).
+    """
     serializer_class = ReviewSerializer
     permission_classes = [IsAuthenticated, IsJobseekerOwnerOrAdminReadonly]
+
     def get_queryset(self):
-        return Review.objects.filter(jobseeker = self.kwargs.get('jobseeker_pk'))
+        return Review.objects.filter(jobseeker=self.kwargs.get('jobseeker_pk'))
 
     def get_serializer_context(self):
         context = super().get_serializer_context()
@@ -43,9 +65,14 @@ class ReviewViewSetForJobseeker(ModelViewSet):
 
 
 class ReviewViewSetForEmployer(ModelViewSet):
+    """
+    A viewset for managing reviews Received by an employer.
+
+    - GET: Retrieve reviews given by jobseekers.
+    """
     http_method_names = ['get', 'head', 'options']
     serializer_class = ReviewSerializer
     permission_classes = [IsAuthenticated, IsEmployerOwnerOrAdminReadonly]
 
     def get_queryset(self):
-        return Review.objects.filter(employer = self.kwargs.get('employer_pk'))
+        return Review.objects.filter(employer=self.kwargs.get('employer_pk'))
