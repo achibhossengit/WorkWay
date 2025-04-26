@@ -33,7 +33,8 @@ INSTALLED_APPS = [
     'api',
     'users',
     'jobs',
-    'apply_review'
+    'apply_review',
+    'django_filters'
 ]
 
 MIDDLEWARE = [

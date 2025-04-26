@@ -17,7 +17,7 @@ class IsEmployerOrReadOnly(BasePermission):
         if request.user.is_staff:
             return (view.action == 'destroy')
 
-        return request.user.user_type == 'Employer'
+        return request.user.is_authenticated and request.user.user_type == 'Employer'
     
     def has_object_permission(self, request, view, obj):
         if request.method in SAFE_METHODS:
