@@ -21,8 +21,9 @@ This project, named "Work Way," is a job portal platform built using Django and 
 - Employers can review applications and provide ratings and comments.
 
 ### API Documentation
-- Integrated Swagger and ReDoc for API documentation.
-
+- Swagger Documentation: https://work-way.vercel.app/api/v1/swagger/
+- ReDoc Documentation: https://work-way.vercel.app/api/v1/redoc/
+  
 ---
 
 ## Installation and Setup
