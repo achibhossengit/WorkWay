@@ -19,6 +19,10 @@ ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 AUTH_USER_MODEL = 'users.CustomUser'
 
 
+INTERNAL_IPS = [
+    '127.0.0.1', 
+]
+
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
 ]
@@ -38,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'djoser',
     'corsheaders',
+    "debug_toolbar",
     'api',
     'users',
     'jobs',
@@ -48,6 +53,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
