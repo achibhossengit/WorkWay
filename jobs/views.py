@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.pagination import PageNumberPagination
 from jobs.models import Job, Category
 from jobs.serializers import JobSerializer, CategorySerializer, NestedJobSerializer
 from api.permissions import IsEmployerOrReadOnly, IsAdminOrReadOnly
+from jobs.paginations import CustomPageNumberPagination
 
 # Create your views here.
 class CategoryViewSet(ModelViewSet):
@@ -36,7 +36,7 @@ class JobViewSet(ModelViewSet):
     permission_classes = [IsEmployerOrReadOnly]
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['category']
-    pagination_class = PageNumberPagination
+    pagination_class = CustomPageNumberPagination
 
     def get_serializer_context(self):
         """
