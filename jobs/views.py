@@ -30,7 +30,7 @@ class JobViewSet(ModelViewSet):
     - DELETE: Delete a job (Employers only).
     - Filters: Supports filtering jobs by category.
     """
-    queryset = Job.objects.all()
+    queryset = Job.objects.select_related('employer__user', 'category', 'details', 'requirements').all()
     serializer_class = JobSerializer
     permission_classes = [IsEmployerOrReadOnly]
     filter_backends = [DjangoFilterBackend]

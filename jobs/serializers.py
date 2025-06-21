@@ -1,6 +1,7 @@
 from rest_framework.serializers import ModelSerializer
 from jobs.models import Job, Detail, Category, Requirement
-from users.models import CustomUser
+from users.models import Employer, CustomUser
+from rest_framework import serializers
 
 class DetailSerializer(ModelSerializer):
     class Meta:
@@ -11,8 +12,21 @@ class RequirementSerializer(ModelSerializer):
     class Meta:
         model = Requirement
         fields = ['education', 'experience', 'skill']
+        
+class CategorySerializer(ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'
+        
+class EmployerSerializer(ModelSerializer):
+    username = serializers.CharField(source='user.username', read_only=True)  # সরাসরি username যোগ করুন
+    class Meta:
+        model = Employer
+        fields = ['username', 'company', 'location']  # প্রাসঙ্গিক ফিল্ডগুলো ব্যবহার করুন
 
 class JobSerializer(ModelSerializer):
+    category = CategorySerializer()
+    employer = EmployerSerializer()
     details = DetailSerializer()
     requirements = RequirementSerializer()
     class Meta:
@@ -75,8 +89,3 @@ class NestedJobSerializer(ModelSerializer):
         requirements_serializer.update(instance.requirements, requirements)
         
         return super().update(instance, validated_data)
-    
-class CategorySerializer(ModelSerializer):
-    class Meta:
-        model = Category
-        fields = '__all__'
