@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.pagination import PageNumberPagination
 from jobs.models import Job, Category
 from jobs.serializers import JobSerializer, CategorySerializer, NestedJobSerializer
 from api.permissions import IsEmployerOrReadOnly, IsAdminOrReadOnly
@@ -30,11 +31,12 @@ class JobViewSet(ModelViewSet):
     - DELETE: Delete a job (Employers only).
     - Filters: Supports filtering jobs by category.
     """
-    queryset = Job.objects.select_related('employer__user', 'category', 'details', 'requirements').all()
+    queryset = Job.objects.select_related('employer__user', 'category', 'details', 'requirements').all().order_by('-id')
     serializer_class = JobSerializer
     permission_classes = [IsEmployerOrReadOnly]
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['category']
+    pagination_class = PageNumberPagination
 
     def get_serializer_context(self):
         """
