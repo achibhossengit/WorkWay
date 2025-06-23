@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter
 from rest_framework.viewsets import ModelViewSet
 from jobs.models import Job, Category
 from jobs.serializers import JobSerializer, CategorySerializer, NestedJobSerializer
@@ -34,8 +35,16 @@ class JobViewSet(ModelViewSet):
     queryset = Job.objects.select_related('employer__user', 'category', 'details', 'requirements').all().order_by('-id')
     serializer_class = JobSerializer
     permission_classes = [IsEmployerOrReadOnly]
-    filter_backends = [DjangoFilterBackend]
+    filter_backends = [DjangoFilterBackend, SearchFilter]
     filterset_fields = ['category']
+    search_fields = [
+        'title',
+        'category__title',
+        'details__description',
+        'details__workplace',
+        'requirements__education',
+        'requirements__skill',
+    ]
     pagination_class = CustomPageNumberPagination
 
     def get_serializer_context(self):
