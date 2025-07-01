@@ -17,7 +17,7 @@ class JobSeekerProfileSerializer(ModelSerializer):
     resume = serializers.ImageField(required=False)
     class Meta:
         model = JobSeeker
-        fields = ['gender', 'resume', 'about', 'skills', 'experiences']
+        exclude = ['user']
         extra_kwargs = {
             'gender': {'required': False},
             'resume': {'required': False},
@@ -26,7 +26,7 @@ class JobSeekerProfileSerializer(ModelSerializer):
 class EmployerProfileSerializer(ModelSerializer):
     class Meta:
         model = Employer
-        fields = ['company', 'location']
+        exclude = ['user']
         extra_kwargs = {
             'company': {'required': False},
             'location': {'required': False},
@@ -39,7 +39,7 @@ class CustomUserSerializer(ModelSerializer):
 
     class Meta:
         model = CustomUser
-        fields = ['id', 'username', 'email', 'first_name', 'last_name','user_type','profile_picture', 'jobseeker', 'employer']
+        fields = ['id', 'username', 'email', 'first_name', 'last_name','user_type','profile_picture', 'contact_number','jobseeker', 'employer']
         read_only_fields = ['user_type']
 
     def update(self, instance, validated_data):

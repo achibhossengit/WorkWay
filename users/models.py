@@ -22,6 +22,8 @@ class Employer(models.Model):
     user = models.OneToOneField(CustomUser, primary_key=True, on_delete=models.CASCADE, related_name='employer')
     company = models.CharField(max_length=200)
     location = models.CharField(max_length=200)
+    website = models.CharField(max_length=30, blank=True, null=True)
+    description = models.CharField(max_length=300, blank=True, null=True)
 
     def __str__(self):
         return self.user.username
@@ -41,6 +43,7 @@ class JobSeeker(models.Model):
     about = models.TextField(max_length=250, blank=True, null=True)
     skills = models.JSONField(default=list)
     experiences = models.PositiveIntegerField(validators=[MaxValueValidator(100)], default=0)
+    current_address = models.CharField(max_length=100, blank=True, null=True)
     
     def __str__(self):
         return self.user.username
