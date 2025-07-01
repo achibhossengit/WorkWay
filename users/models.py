@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import FileExtensionValidator
+from django.core.validators import FileExtensionValidator, MaxValueValidator
 from cloudinary.models import CloudinaryField
 
 # Create your models here.
@@ -38,6 +38,9 @@ class JobSeeker(models.Model):
     user = models.OneToOneField(CustomUser, primary_key=True, on_delete=models.CASCADE, related_name='jobseeker')
     gender = models.CharField(max_length=20, choices=GENDER_CHOICES, default=OTHERS)
     resume = CloudinaryField('resumes', validators=[FileExtensionValidator(['jpg', 'png', 'jpeg', 'pdf'])], blank=True, null=True)
-
+    about = models.TextField(max_length=250, blank=True, null=True)
+    skills = models.JSONField(default=list, blank=True, null=True)
+    experiences = models.PositiveIntegerField(validators=[MaxValueValidator(100)], default=0)
+    
     def __str__(self):
         return self.user.username

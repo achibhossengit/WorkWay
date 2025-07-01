@@ -17,7 +17,7 @@ class JobSeekerProfileSerializer(ModelSerializer):
     resume = serializers.ImageField(required=False)
     class Meta:
         model = JobSeeker
-        fields = ['gender', 'resume']
+        fields = ['gender', 'resume', 'about', 'skills', 'experiences']
         extra_kwargs = {
             'gender': {'required': False},
             'resume': {'required': False},
