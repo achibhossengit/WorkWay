@@ -9,10 +9,12 @@ class Application(models.Model):
     PEDING = 'P'
     REVIEWED = 'R'
     ACCEPT = 'A'
+    CANCELLED = 'C'
     STATUS_CHOICES = [
         (PEDING, 'Pending'),
         (REVIEWED, 'Reviewed'),
         (ACCEPT, 'ACCEPT'),
+        (CANCELLED, 'Cancelled'),
     ]
 
     job = models.ForeignKey(Job, on_delete=models.CASCADE, related_name='applications')

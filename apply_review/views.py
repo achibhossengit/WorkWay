@@ -11,14 +11,20 @@ class ApplicationViewSetForJobseeker(ModelViewSet):
     A viewset for managing applications submitted by a jobseeker.
 
     - GET: Retrieve applications for a specific jobseeker.
-    - PUT/PATCH: Update an application (Only application creator).
-    - DELETE: Delete an application (Only applicaton creator).
+    - PUT/PATCH: Cancel an application (sets status to Cancelled).
+    - DELETE: Same as cancel — does not remove the row from the database.
     """
     permission_classes = [IsAuthenticated, IsJobseekerOwnerOrAdminReadonly]
     serializer_class = ApplicationSerializer
 
     def get_queryset(self):
-        return Application.objects.filter(jobseeker=self.kwargs.get('jobseeker_pk'))
+        return Application.objects.filter(
+            jobseeker=self.kwargs.get("jobseeker_pk")
+        ).select_related("job")
+
+    def perform_destroy(self, instance):
+        instance.status = Application.CANCELLED
+        instance.save(update_fields=['status'])
 
     def get_serializer_context(self):
         context = super().get_serializer_context()
@@ -41,7 +47,9 @@ class ApplicationViewSetForEmployer(ModelViewSet):
     serializer_class = ApplicationSerializerForEmployer
 
     def get_queryset(self):
-        return Application.objects.filter(job=self.kwargs.get('job_pk'))
+        return Application.objects.filter(job=self.kwargs.get('job_pk')).exclude(
+            status=Application.CANCELLED
+        )
 
 
 class ReviewViewSetForJobseeker(ModelViewSet):
