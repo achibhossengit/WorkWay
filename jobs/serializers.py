@@ -35,6 +35,7 @@ class JobSerializer(ModelSerializer):
     employer = EmployerSerializer(read_only=True)
     details = DetailSerializer()
     requirements = RequirementSerializer()
+    is_featured = serializers.SerializerMethodField()
 
     class Meta:
         model = Job
@@ -47,8 +48,15 @@ class JobSerializer(ModelSerializer):
             'published_at',
             'details',
             'requirements',
+            'is_featured',
+            'featured_until',
         ]
-        read_only_fields = ['employer', 'published_at']
+        read_only_fields = ['employer', 'published_at', 'is_featured', 'featured_until']
+
+    def get_is_featured(self, obj):
+        if hasattr(obj, 'currently_featured'):
+            return bool(obj.currently_featured)
+        return obj.is_featured
 
     def create(self, validated_data):
         details = validated_data.pop('details')
@@ -77,10 +85,27 @@ class JobSerializer(ModelSerializer):
 class NestedJobSerializer(ModelSerializer):
     details = DetailSerializer()
     requirements = RequirementSerializer()
+    is_featured = serializers.SerializerMethodField()
+
     class Meta:
         model = Job
-        fields = ['id', 'title', 'employer', 'category', 'published_at', 'details', 'requirements']
-        read_only_fields = ['employer', 'category']
+        fields = [
+            'id',
+            'title',
+            'employer',
+            'category',
+            'published_at',
+            'details',
+            'requirements',
+            'is_featured',
+            'featured_until',
+        ]
+        read_only_fields = ['employer', 'category', 'is_featured', 'featured_until']
+
+    def get_is_featured(self, obj):
+        if hasattr(obj, 'currently_featured'):
+            return bool(obj.currently_featured)
+        return obj.is_featured
 
     def create(self, validated_data):
         details = validated_data.pop('details')

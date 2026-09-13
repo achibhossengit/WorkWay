@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'users',
     'jobs',
     'apply_review',
+    'payments',
     'django_filters'
 ]
 
@@ -184,6 +185,18 @@ DEFAULT_FROM_EMAIL = config(
     'DEFAULT_FROM_EMAIL',
     default=EMAIL_HOST_USER or 'noreply@workway.local',
 )
+
+# SSLCommerz (sandbox by default — keep SSL_IS_SANDBOX=True on the live demo too)
+SSL_STORE_ID = config('SSL_STORE_ID', default='')
+SSL_STORE_PASSWD = config('SSL_STORE_PASSWD', default='')
+SSL_IS_SANDBOX = config('SSL_IS_SANDBOX', default=True, cast=bool)
+SSL_BACKEND_URL = config('SSL_BACKEND_URL', default='http://127.0.0.1:8000')
+SSL_FRONTEND_URL = config(
+    'SSL_FRONTEND_URL',
+    default=f"{config('EMAIL_FRONTEND_PROTOCOL')}://{config('EMAIL_FRONTEND_DOMAIN')}",
+)
+FEATURED_JOB_AMOUNT = config('FEATURED_JOB_AMOUNT', default='100.00')
+FEATURED_JOB_DAYS = config('FEATURED_JOB_DAYS', default=7, cast=int)
 
 
 # swagger config

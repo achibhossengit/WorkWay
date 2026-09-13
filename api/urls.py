@@ -14,6 +14,7 @@ from apply_review.views import (
     ReviewViewSetForJobseeker,
     PublicReviewViewSet,
 )
+from payments.views import EmployerPaymentViewSet
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -53,6 +54,7 @@ employer_router.register(
     basename='employer-applications',
 )
 employer_router.register('reviews', ReviewViewSetForEmployer, basename='employer-reivews')
+employer_router.register('payments', EmployerPaymentViewSet, basename='employer-payments')
 
 # employer -> jobs -> applications
 job_router = NestedDefaultRouter(employer_router, 'jobs', lookup='job')
@@ -65,6 +67,7 @@ urlpatterns = [
    path('', include(jobseeker_router.urls)),
    path('', include(employer_router.urls)),
    path('', include(job_router.urls)),
+   path('payments/', include('payments.urls')),
    path('api-auth/', include('rest_framework.urls')),
    path('auth/', include('djoser.urls')),
    path('auth/', include('djoser.urls.jwt')),

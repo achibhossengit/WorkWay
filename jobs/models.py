@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import BooleanField, Case, Value, When
+from django.utils import timezone
 from users.models import Employer
 from django.core.validators import MinValueValidator, MaxValueValidator
 
@@ -15,9 +17,27 @@ class Job(models.Model):
     employer = models.ForeignKey(Employer, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     published_at = models.DateTimeField(auto_now_add=True)
+    featured_until = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
         return self.title
+
+    @property
+    def is_featured(self):
+        return bool(self.featured_until and self.featured_until > timezone.now())
+
+    @classmethod
+    def listing_queryset(cls):
+        now = timezone.now()
+        return cls.objects.select_related(
+            'employer__user', 'category', 'details', 'requirements'
+        ).annotate(
+            currently_featured=Case(
+                When(featured_until__gt=now, then=Value(True)),
+                default=Value(False),
+                output_field=BooleanField(),
+            )
+        ).order_by('-currently_featured', '-id')
 
 class Detail(models.Model):
     HOME = 'H'

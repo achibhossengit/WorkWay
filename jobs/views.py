@@ -32,7 +32,7 @@ class JobViewSet(ModelViewSet):
     - DELETE: Delete a job (Employers only).
     - Filters: Supports filtering jobs by category.
     """
-    queryset = Job.objects.select_related('employer__user', 'category', 'details', 'requirements').all().order_by('-id')
+    queryset = Job.listing_queryset()
     serializer_class = JobSerializer
     permission_classes = [IsEmployerOrReadOnly]
     filter_backends = [DjangoFilterBackend, SearchFilter]
@@ -76,11 +76,7 @@ class EmployerJobViewSet(ModelViewSet):
         """
         Return jobs filtered by the employer's ID passed in the URL.
         """
-        return Job.objects.filter(
-            employer=self.kwargs.get('employer_pk')
-        ).select_related(
-            'employer__user', 'category', 'details', 'requirements'
-        ).order_by('-id')
+        return Job.listing_queryset().filter(employer=self.kwargs.get('employer_pk'))
 
 
 class CategoryJobViewSet(ModelViewSet):
@@ -98,7 +94,7 @@ class CategoryJobViewSet(ModelViewSet):
         """
         Return jobs filtered by the category ID passed in the URL.
         """
-        return Job.objects.filter(category=self.kwargs.get('category_pk'))
+        return Job.listing_queryset().filter(category=self.kwargs.get('category_pk'))
 
     def get_serializer_context(self):
         """
