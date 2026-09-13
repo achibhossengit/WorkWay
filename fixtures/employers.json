@@ -1,0 +1,188 @@
+[
+  {
+    "model": "users.customuser",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$1VnCxoL2dFj1vNStJkSiKm$2o8KErtEKWLY1btpxtoKzDC16DYCjfBNWJF7S5GgTu4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "techforge",
+      "first_name": "Nadia",
+      "last_name": "Rahman",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-01-12T08:00:00Z",
+      "email": "hr@techforge.dev",
+      "user_type": "Employer",
+      "profile_picture": "",
+      "contact_number": "01711001001",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$1VnCxoL2dFj1vNStJkSiKm$2o8KErtEKWLY1btpxtoKzDC16DYCjfBNWJF7S5GgTu4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "greenleaf",
+      "first_name": "Hasan",
+      "last_name": "Chowdhury",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-02-03T08:00:00Z",
+      "email": "jobs@greenleaf.bd",
+      "user_type": "Employer",
+      "profile_picture": "",
+      "contact_number": "01822002002",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$1VnCxoL2dFj1vNStJkSiKm$2o8KErtEKWLY1btpxtoKzDC16DYCjfBNWJF7S5GgTu4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "pixelcraft",
+      "first_name": "Maliha",
+      "last_name": "Sultana",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-02-20T08:00:00Z",
+      "email": "hello@pixelcraft.studio",
+      "user_type": "Employer",
+      "profile_picture": "",
+      "contact_number": "01933003003",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$1VnCxoL2dFj1vNStJkSiKm$2o8KErtEKWLY1btpxtoKzDC16DYCjfBNWJF7S5GgTu4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "northbank",
+      "first_name": "Imran",
+      "last_name": "Kabir",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-03-08T08:00:00Z",
+      "email": "careers@northbank.bd",
+      "user_type": "Employer",
+      "profile_picture": "",
+      "contact_number": "01644004004",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$1VnCxoL2dFj1vNStJkSiKm$2o8KErtEKWLY1btpxtoKzDC16DYCjfBNWJF7S5GgTu4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "learnhub",
+      "first_name": "Farhana",
+      "last_name": "Akter",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-03-22T08:00:00Z",
+      "email": "hr@learnhub.edu",
+      "user_type": "Employer",
+      "profile_picture": "",
+      "contact_number": "01355005005",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$1VnCxoL2dFj1vNStJkSiKm$2o8KErtEKWLY1btpxtoKzDC16DYCjfBNWJF7S5GgTu4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "citycare",
+      "first_name": "Dr. Reza",
+      "last_name": "Karim",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-04-05T08:00:00Z",
+      "email": "recruit@citycare.bd",
+      "user_type": "Employer",
+      "profile_picture": "",
+      "contact_number": "01566006006",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.employer",
+    "pk": 1,
+    "fields": {
+      "company": "TechForge Ltd",
+      "location": "Banani, Dhaka",
+      "website": "techforge.dev",
+      "description": "A product engineering company building web and mobile platforms for local and global clients."
+    }
+  },
+  {
+    "model": "users.employer",
+    "pk": 2,
+    "fields": {
+      "company": "GreenLeaf Foods",
+      "location": "Agrabad, Chattogram",
+      "website": "greenleaf.bd",
+      "description": "A growing FMCG brand hiring across operations, marketing, and customer support."
+    }
+  },
+  {
+    "model": "users.employer",
+    "pk": 3,
+    "fields": {
+      "company": "PixelCraft Studio",
+      "location": "Dhanmondi, Dhaka",
+      "website": "pixelcraft.studio",
+      "description": "A design studio focused on branding, UI/UX, and digital campaigns."
+    }
+  },
+  {
+    "model": "users.employer",
+    "pk": 4,
+    "fields": {
+      "company": "North Bank PLC",
+      "location": "Motijheel, Dhaka",
+      "website": "northbank.bd",
+      "description": "A commercial bank looking for finance, analytics, and operations talent."
+    }
+  },
+  {
+    "model": "users.employer",
+    "pk": 5,
+    "fields": {
+      "company": "LearnHub Academy",
+      "location": "Zindabazar, Sylhet",
+      "website": "learnhub.edu",
+      "description": "An education institute offering school and professional skill programs."
+    }
+  },
+  {
+    "model": "users.employer",
+    "pk": 6,
+    "fields": {
+      "company": "CityCare Hospital",
+      "location": "Uttara, Dhaka",
+      "website": "citycare.bd",
+      "description": "A private hospital hiring clinical and support staff for expanding units."
+    }
+  }
+]

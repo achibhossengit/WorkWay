@@ -1,0 +1,1652 @@
+[
+  {
+    "model": "jobs.job",
+    "pk": 1,
+    "fields": {
+      "title": "Senior Django Developer",
+      "employer": 1,
+      "category": 1,
+      "published_at": "2026-09-01T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 2,
+    "fields": {
+      "title": "Frontend Engineer",
+      "employer": 1,
+      "category": 1,
+      "published_at": "2026-09-02T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 3,
+    "fields": {
+      "title": "Junior Python Intern",
+      "employer": 1,
+      "category": 1,
+      "published_at": "2026-09-03T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 4,
+    "fields": {
+      "title": "UI/UX Designer",
+      "employer": 3,
+      "category": 2,
+      "published_at": "2026-09-04T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 5,
+    "fields": {
+      "title": "Graphic Designer",
+      "employer": 3,
+      "category": 2,
+      "published_at": "2026-09-05T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 6,
+    "fields": {
+      "title": "Digital Marketing Executive",
+      "employer": 2,
+      "category": 3,
+      "published_at": "2026-09-06T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 7,
+    "fields": {
+      "title": "Accounts Officer",
+      "employer": 4,
+      "category": 4,
+      "published_at": "2026-09-07T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 8,
+    "fields": {
+      "title": "Customer Support Agent",
+      "employer": 2,
+      "category": 5,
+      "published_at": "2026-09-08T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 9,
+    "fields": {
+      "title": "HR Executive",
+      "employer": 1,
+      "category": 6,
+      "published_at": "2026-09-09T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 10,
+    "fields": {
+      "title": "English Teacher",
+      "employer": 5,
+      "category": 7,
+      "published_at": "2026-09-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 11,
+    "fields": {
+      "title": "Staff Nurse",
+      "employer": 6,
+      "category": 8,
+      "published_at": "2026-09-11T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 12,
+    "fields": {
+      "title": "Data Analyst",
+      "employer": 4,
+      "category": 1,
+      "published_at": "2026-09-12T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 13,
+    "fields": {
+      "title": "Mobile App Developer",
+      "employer": 1,
+      "category": 1,
+      "published_at": "2026-08-20T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 14,
+    "fields": {
+      "title": "QA Engineer",
+      "employer": 1,
+      "category": 1,
+      "published_at": "2026-08-21T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 15,
+    "fields": {
+      "title": "DevOps Engineer",
+      "employer": 1,
+      "category": 1,
+      "published_at": "2026-08-22T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 16,
+    "fields": {
+      "title": "Node.js Backend Developer",
+      "employer": 1,
+      "category": 1,
+      "published_at": "2026-08-23T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 17,
+    "fields": {
+      "title": "Android Developer",
+      "employer": 1,
+      "category": 1,
+      "published_at": "2026-08-24T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 18,
+    "fields": {
+      "title": "Full Stack Engineer",
+      "employer": 1,
+      "category": 1,
+      "published_at": "2026-08-25T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 19,
+    "fields": {
+      "title": "IT Support Officer",
+      "employer": 4,
+      "category": 1,
+      "published_at": "2026-08-26T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 20,
+    "fields": {
+      "title": "Cybersecurity Analyst",
+      "employer": 4,
+      "category": 1,
+      "published_at": "2026-08-27T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 21,
+    "fields": {
+      "title": "Machine Learning Intern",
+      "employer": 1,
+      "category": 1,
+      "published_at": "2026-08-28T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 22,
+    "fields": {
+      "title": "WordPress Developer",
+      "employer": 3,
+      "category": 1,
+      "published_at": "2026-08-29T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 23,
+    "fields": {
+      "title": "Motion Graphics Designer",
+      "employer": 3,
+      "category": 2,
+      "published_at": "2026-08-18T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 24,
+    "fields": {
+      "title": "Brand Designer",
+      "employer": 3,
+      "category": 2,
+      "published_at": "2026-08-17T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 25,
+    "fields": {
+      "title": "Product Designer",
+      "employer": 1,
+      "category": 2,
+      "published_at": "2026-08-16T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 26,
+    "fields": {
+      "title": "Video Editor",
+      "employer": 3,
+      "category": 2,
+      "published_at": "2026-08-15T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 27,
+    "fields": {
+      "title": "Content Writer",
+      "employer": 2,
+      "category": 3,
+      "published_at": "2026-08-14T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 28,
+    "fields": {
+      "title": "Social Media Manager",
+      "employer": 3,
+      "category": 3,
+      "published_at": "2026-08-13T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 29,
+    "fields": {
+      "title": "SEO Specialist",
+      "employer": 2,
+      "category": 3,
+      "published_at": "2026-08-12T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 30,
+    "fields": {
+      "title": "Brand Manager",
+      "employer": 2,
+      "category": 3,
+      "published_at": "2026-08-11T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 31,
+    "fields": {
+      "title": "Market Research Analyst",
+      "employer": 2,
+      "category": 3,
+      "published_at": "2026-08-10T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 32,
+    "fields": {
+      "title": "Internal Auditor",
+      "employer": 4,
+      "category": 4,
+      "published_at": "2026-08-09T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 33,
+    "fields": {
+      "title": "Financial Analyst",
+      "employer": 4,
+      "category": 4,
+      "published_at": "2026-08-08T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 34,
+    "fields": {
+      "title": "Payroll Officer",
+      "employer": 2,
+      "category": 4,
+      "published_at": "2026-08-07T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 35,
+    "fields": {
+      "title": "Credit Officer",
+      "employer": 4,
+      "category": 4,
+      "published_at": "2026-08-06T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 36,
+    "fields": {
+      "title": "Tax Associate",
+      "employer": 4,
+      "category": 4,
+      "published_at": "2026-08-05T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 37,
+    "fields": {
+      "title": "Call Center Agent",
+      "employer": 2,
+      "category": 5,
+      "published_at": "2026-08-04T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 38,
+    "fields": {
+      "title": "Technical Support Engineer",
+      "employer": 1,
+      "category": 5,
+      "published_at": "2026-08-03T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 39,
+    "fields": {
+      "title": "Client Success Associate",
+      "employer": 4,
+      "category": 5,
+      "published_at": "2026-08-02T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 40,
+    "fields": {
+      "title": "Technical Recruiter",
+      "employer": 1,
+      "category": 6,
+      "published_at": "2026-08-01T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 41,
+    "fields": {
+      "title": "People Operations Officer",
+      "employer": 6,
+      "category": 6,
+      "published_at": "2026-07-30T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 42,
+    "fields": {
+      "title": "Training Coordinator",
+      "employer": 2,
+      "category": 6,
+      "published_at": "2026-07-29T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 43,
+    "fields": {
+      "title": "Mathematics Teacher",
+      "employer": 5,
+      "category": 7,
+      "published_at": "2026-07-28T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 44,
+    "fields": {
+      "title": "Computer Science Instructor",
+      "employer": 5,
+      "category": 7,
+      "published_at": "2026-07-27T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 45,
+    "fields": {
+      "title": "Academic Coordinator",
+      "employer": 5,
+      "category": 7,
+      "published_at": "2026-07-26T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 46,
+    "fields": {
+      "title": "Admissions Officer",
+      "employer": 5,
+      "category": 7,
+      "published_at": "2026-07-25T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 47,
+    "fields": {
+      "title": "Medical Officer",
+      "employer": 6,
+      "category": 8,
+      "published_at": "2026-07-24T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 48,
+    "fields": {
+      "title": "Lab Technician",
+      "employer": 6,
+      "category": 8,
+      "published_at": "2026-07-23T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 49,
+    "fields": {
+      "title": "Pharmacist",
+      "employer": 6,
+      "category": 8,
+      "published_at": "2026-07-22T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.job",
+    "pk": 50,
+    "fields": {
+      "title": "Hospital Receptionist",
+      "employer": 6,
+      "category": 8,
+      "published_at": "2026-07-21T09:00:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 1,
+    "fields": {
+      "job": 1,
+      "description": "Own backend services for client products using Django and PostgreSQL. You will design APIs, review pull requests, and mentor junior engineers.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Banani, Dhaka",
+      "min_salary": 80000,
+      "deadline": "2026-10-15T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 2,
+    "fields": {
+      "job": 2,
+      "description": "Build responsive interfaces with React and Tailwind. Work closely with designers and backend engineers on new product features.",
+      "workplace": "Hy",
+      "status": "F",
+      "locations": "Dhaka / Remote 2 days",
+      "min_salary": 60000,
+      "deadline": "2026-10-20T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 3,
+    "fields": {
+      "job": 3,
+      "description": "A 6-month internship for students who want hands-on Python and Django experience. You will ship small features with a mentor.",
+      "workplace": "O",
+      "status": "I",
+      "locations": "Banani, Dhaka",
+      "min_salary": 15000,
+      "deadline": "2026-10-10T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 4,
+    "fields": {
+      "job": 4,
+      "description": "Design user flows, wireframes, and high-fidelity screens for web and mobile products. Collaborate with engineers through Figma handoff.",
+      "workplace": "Hy",
+      "status": "F",
+      "locations": "Dhanmondi, Dhaka",
+      "min_salary": 45000,
+      "deadline": "2026-10-25T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 5,
+    "fields": {
+      "job": 5,
+      "description": "Create social creatives, pitch decks, and brand assets. Part-time role with flexible hours for experienced Photoshop and Illustrator users.",
+      "workplace": "H",
+      "status": "H",
+      "locations": "Remote, Bangladesh",
+      "min_salary": 25000,
+      "deadline": "2026-10-18T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 6,
+    "fields": {
+      "job": 6,
+      "description": "Plan and run Facebook, Google, and content campaigns for FMCG brands. Track weekly performance and propose experiments.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Agrabad, Chattogram",
+      "min_salary": 35000,
+      "deadline": "2026-10-22T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 7,
+    "fields": {
+      "job": 7,
+      "description": "Handle day-to-day accounting, voucher posting, and monthly reports. Experience with Excel and Tally is required.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Motijheel, Dhaka",
+      "min_salary": 40000,
+      "deadline": "2026-11-01T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 8,
+    "fields": {
+      "job": 8,
+      "description": "Respond to customer chats and calls in Bangla and English. Log tickets in the CRM and follow up until issues are resolved.",
+      "workplace": "H",
+      "status": "F",
+      "locations": "Work from home, Bangladesh",
+      "min_salary": 22000,
+      "deadline": "2026-10-28T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 9,
+    "fields": {
+      "job": 9,
+      "description": "Run end-to-end hiring, onboarding, and employee records for a 40-person engineering team.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Banani, Dhaka",
+      "min_salary": 38000,
+      "deadline": "2026-11-05T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 10,
+    "fields": {
+      "job": 10,
+      "description": "Teach English to secondary students three days a week. Lesson planning and classroom management experience is expected.",
+      "workplace": "O",
+      "status": "H",
+      "locations": "Zindabazar, Sylhet",
+      "min_salary": 20000,
+      "deadline": "2026-10-30T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 11,
+    "fields": {
+      "job": 11,
+      "description": "Provide inpatient nursing care in the general ward. Rotating shifts including nights and weekends.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Uttara, Dhaka",
+      "min_salary": 30000,
+      "deadline": "2026-11-10T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 12,
+    "fields": {
+      "job": 12,
+      "description": "Build reports and dashboards from banking data. Work with SQL, Excel, and Power BI to support branch and product teams.",
+      "workplace": "Hy",
+      "status": "F",
+      "locations": "Motijheel, Dhaka",
+      "min_salary": 55000,
+      "deadline": "2026-11-08T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 13,
+    "fields": {
+      "job": 13,
+      "description": "Build and maintain Android and Flutter apps for client products. You will ship releases, fix crashes, and work with backend APIs.",
+      "workplace": "Hy",
+      "status": "F",
+      "locations": "Banani, Dhaka",
+      "min_salary": 70000,
+      "deadline": "2026-10-31T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 14,
+    "fields": {
+      "job": 14,
+      "description": "Write test plans, automate regression suites, and catch defects before release. Experience with API and UI testing is a plus.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Banani, Dhaka",
+      "min_salary": 45000,
+      "deadline": "2026-11-02T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 15,
+    "fields": {
+      "job": 15,
+      "description": "Own CI/CD, cloud servers, and monitoring. Help the team ship faster with safer deployments.",
+      "workplace": "Hy",
+      "status": "F",
+      "locations": "Dhaka",
+      "min_salary": 90000,
+      "deadline": "2026-11-12T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 16,
+    "fields": {
+      "job": 16,
+      "description": "Develop REST services in Node.js and Express. You will integrate with PostgreSQL and third-party APIs.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Banani, Dhaka",
+      "min_salary": 65000,
+      "deadline": "2026-10-27T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 17,
+    "fields": {
+      "job": 17,
+      "description": "Maintain native Android apps, improve performance, and deliver Play Store updates.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Banani, Dhaka",
+      "min_salary": 58000,
+      "deadline": "2026-11-04T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 18,
+    "fields": {
+      "job": 18,
+      "description": "Work across React and Django to deliver complete features from database to UI.",
+      "workplace": "Hy",
+      "status": "F",
+      "locations": "Dhaka / Hybrid",
+      "min_salary": 75000,
+      "deadline": "2026-11-15T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 19,
+    "fields": {
+      "job": 19,
+      "description": "Support branch staff with hardware, networking, and core banking software issues.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Motijheel, Dhaka",
+      "min_salary": 32000,
+      "deadline": "2026-10-24T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 20,
+    "fields": {
+      "job": 20,
+      "description": "Monitor logs, investigate incidents, and harden internal systems for the bank.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Motijheel, Dhaka",
+      "min_salary": 85000,
+      "deadline": "2026-11-20T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 21,
+    "fields": {
+      "job": 21,
+      "description": "Assist the data team with Python notebooks, dataset cleanup, and model experiments.",
+      "workplace": "O",
+      "status": "I",
+      "locations": "Banani, Dhaka",
+      "min_salary": 18000,
+      "deadline": "2026-10-16T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 22,
+    "fields": {
+      "job": 22,
+      "description": "Build and customize WordPress sites for studio clients, including themes and WooCommerce.",
+      "workplace": "H",
+      "status": "H",
+      "locations": "Remote, Bangladesh",
+      "min_salary": 28000,
+      "deadline": "2026-10-19T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 23,
+    "fields": {
+      "job": 23,
+      "description": "Create short-form motion pieces for ads and social. After Effects experience is required.",
+      "workplace": "Hy",
+      "status": "F",
+      "locations": "Dhanmondi, Dhaka",
+      "min_salary": 42000,
+      "deadline": "2026-11-06T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 24,
+    "fields": {
+      "job": 24,
+      "description": "Lead identity work for new brands: logos, color systems, and brand guidelines.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Dhanmondi, Dhaka",
+      "min_salary": 50000,
+      "deadline": "2026-11-09T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 25,
+    "fields": {
+      "job": 25,
+      "description": "Own the design of one product squad from research to polished UI.",
+      "workplace": "Hy",
+      "status": "F",
+      "locations": "Banani, Dhaka",
+      "min_salary": 70000,
+      "deadline": "2026-11-18T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 26,
+    "fields": {
+      "job": 26,
+      "description": "Edit campaign videos, reels, and client case studies on a part-time schedule.",
+      "workplace": "H",
+      "status": "H",
+      "locations": "Remote, Bangladesh",
+      "min_salary": 24000,
+      "deadline": "2026-10-21T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 27,
+    "fields": {
+      "job": 27,
+      "description": "Write product copy, blogs, and email campaigns for food brands in Bangla and English.",
+      "workplace": "H",
+      "status": "F",
+      "locations": "Work from home, Bangladesh",
+      "min_salary": 30000,
+      "deadline": "2026-10-26T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 28,
+    "fields": {
+      "job": 28,
+      "description": "Plan monthly content calendars and grow Instagram and Facebook for studio clients.",
+      "workplace": "Hy",
+      "status": "F",
+      "locations": "Dhanmondi, Dhaka",
+      "min_salary": 36000,
+      "deadline": "2026-11-03T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 29,
+    "fields": {
+      "job": 29,
+      "description": "Improve organic traffic for brand websites through technical SEO and content briefs.",
+      "workplace": "H",
+      "status": "F",
+      "locations": "Remote, Bangladesh",
+      "min_salary": 40000,
+      "deadline": "2026-11-11T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 30,
+    "fields": {
+      "job": 30,
+      "description": "Own positioning, packaging feedback, and campaign briefs for a core FMCG line.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Agrabad, Chattogram",
+      "min_salary": 65000,
+      "deadline": "2026-11-22T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 31,
+    "fields": {
+      "job": 31,
+      "description": "Run surveys, competitor reviews, and monthly insight decks for the marketing team.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Agrabad, Chattogram",
+      "min_salary": 38000,
+      "deadline": "2026-10-29T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 32,
+    "fields": {
+      "job": 32,
+      "description": "Perform branch audits, document findings, and follow up on compliance issues.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Motijheel, Dhaka",
+      "min_salary": 52000,
+      "deadline": "2026-11-14T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 33,
+    "fields": {
+      "job": 33,
+      "description": "Build forecasts, variance reports, and board packs for retail banking products.",
+      "workplace": "Hy",
+      "status": "F",
+      "locations": "Motijheel, Dhaka",
+      "min_salary": 60000,
+      "deadline": "2026-11-16T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 34,
+    "fields": {
+      "job": 34,
+      "description": "Process monthly payroll, overtime, and tax deductions for factory and office staff.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Agrabad, Chattogram",
+      "min_salary": 34000,
+      "deadline": "2026-10-23T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 35,
+    "fields": {
+      "job": 35,
+      "description": "Assess loan files, visit clients, and prepare credit proposals for SME customers.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Motijheel, Dhaka",
+      "min_salary": 45000,
+      "deadline": "2026-11-07T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 36,
+    "fields": {
+      "job": 36,
+      "description": "Prepare VAT and income-tax filings and support external audit requests.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Motijheel, Dhaka",
+      "min_salary": 42000,
+      "deadline": "2026-11-19T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 37,
+    "fields": {
+      "job": 37,
+      "description": "Take inbound order and complaint calls in two shifts. Clear Bangla speaking is required.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Agrabad, Chattogram",
+      "min_salary": 20000,
+      "deadline": "2026-10-17T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 38,
+    "fields": {
+      "job": 38,
+      "description": "Troubleshoot SaaS issues for B2B clients over chat and email. Basic SQL is useful.",
+      "workplace": "Hy",
+      "status": "F",
+      "locations": "Banani, Dhaka",
+      "min_salary": 40000,
+      "deadline": "2026-11-01T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 39,
+    "fields": {
+      "job": 39,
+      "description": "Onboard new SME banking clients and keep them using digital channels.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Motijheel, Dhaka",
+      "min_salary": 36000,
+      "deadline": "2026-11-13T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 40,
+    "fields": {
+      "job": 40,
+      "description": "Source engineers, run screening calls, and coordinate interviews for product teams.",
+      "workplace": "Hy",
+      "status": "F",
+      "locations": "Banani, Dhaka",
+      "min_salary": 42000,
+      "deadline": "2026-10-31T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 41,
+    "fields": {
+      "job": 41,
+      "description": "Manage attendance, leave, and staff files for hospital employees.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Uttara, Dhaka",
+      "min_salary": 33000,
+      "deadline": "2026-11-17T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 42,
+    "fields": {
+      "job": 42,
+      "description": "Schedule factory trainings, track attendance, and prepare training materials.",
+      "workplace": "O",
+      "status": "H",
+      "locations": "Agrabad, Chattogram",
+      "min_salary": 26000,
+      "deadline": "2026-10-25T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 43,
+    "fields": {
+      "job": 43,
+      "description": "Teach secondary mathematics and prepare students for board exams.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Zindabazar, Sylhet",
+      "min_salary": 28000,
+      "deadline": "2026-11-21T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 44,
+    "fields": {
+      "job": 44,
+      "description": "Teach programming basics and ICT to college students, including lab sessions.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Zindabazar, Sylhet",
+      "min_salary": 35000,
+      "deadline": "2026-11-23T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 45,
+    "fields": {
+      "job": 45,
+      "description": "Coordinate teachers, class schedules, and parent communication for the academy.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Zindabazar, Sylhet",
+      "min_salary": 40000,
+      "deadline": "2026-11-24T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 46,
+    "fields": {
+      "job": 46,
+      "description": "Counsel prospective students, process applications, and hit monthly admission targets.",
+      "workplace": "O",
+      "status": "H",
+      "locations": "Zindabazar, Sylhet",
+      "min_salary": 22000,
+      "deadline": "2026-10-20T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 47,
+    "fields": {
+      "job": 47,
+      "description": "Provide outpatient consultations and emergency cover under senior consultants.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Uttara, Dhaka",
+      "min_salary": 70000,
+      "deadline": "2026-11-25T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 48,
+    "fields": {
+      "job": 48,
+      "description": "Collect samples and run routine diagnostic tests in the hospital laboratory.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Uttara, Dhaka",
+      "min_salary": 28000,
+      "deadline": "2026-11-05T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 49,
+    "fields": {
+      "job": 49,
+      "description": "Dispense medicines, counsel patients, and manage pharmacy inventory.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Uttara, Dhaka",
+      "min_salary": 36000,
+      "deadline": "2026-11-26T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.detail",
+    "pk": 50,
+    "fields": {
+      "job": 50,
+      "description": "Greet patients, book appointments, and keep the front desk running on rotating shifts.",
+      "workplace": "O",
+      "status": "F",
+      "locations": "Uttara, Dhaka",
+      "min_salary": 18000,
+      "deadline": "2026-10-14T23:59:00Z"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 1,
+    "fields": {
+      "job": 1,
+      "education": "Master",
+      "experience": 4,
+      "skill": "Python, Django, PostgreSQL, REST API"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 2,
+    "fields": {
+      "job": 2,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "React, JavaScript, Tailwind CSS, Git"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 3,
+    "fields": {
+      "job": 3,
+      "education": "H.S.C",
+      "experience": 0,
+      "skill": "Python, Git, SQL"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 4,
+    "fields": {
+      "job": 4,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "Figma, Adobe XD, Prototyping, Wireframing"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 5,
+    "fields": {
+      "job": 5,
+      "education": "S.S.C",
+      "experience": 1,
+      "skill": "Photoshop, Illustrator, Branding"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 6,
+    "fields": {
+      "job": 6,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "SEO, Facebook Ads, Content Writing, Analytics"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 7,
+    "fields": {
+      "job": 7,
+      "education": "Master",
+      "experience": 3,
+      "skill": "Accounting, Excel, Tally, Reporting"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 8,
+    "fields": {
+      "job": 8,
+      "education": "H.S.C",
+      "experience": 1,
+      "skill": "Communication, CRM, Bengali, English"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 9,
+    "fields": {
+      "job": 9,
+      "education": "Master",
+      "experience": 2,
+      "skill": "Recruitment, Onboarding, HRIS, Communication"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 10,
+    "fields": {
+      "job": 10,
+      "education": "Master",
+      "experience": 3,
+      "skill": "English, Classroom Management, Lesson Planning"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 11,
+    "fields": {
+      "job": 11,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "Patient Care, First Aid, Ward Management"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 12,
+    "fields": {
+      "job": 12,
+      "education": "Master",
+      "experience": 2,
+      "skill": "SQL, Excel, Power BI, Data Visualization"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 13,
+    "fields": {
+      "job": 13,
+      "education": "H.S.C",
+      "experience": 3,
+      "skill": "Flutter, Dart, Android, REST API"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 14,
+    "fields": {
+      "job": 14,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "Manual Testing, Selenium, Postman, Jira"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 15,
+    "fields": {
+      "job": 15,
+      "education": "Master",
+      "experience": 4,
+      "skill": "Docker, Linux, AWS, GitHub Actions"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 16,
+    "fields": {
+      "job": 16,
+      "education": "H.S.C",
+      "experience": 3,
+      "skill": "Node.js, Express, PostgreSQL, REST API"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 17,
+    "fields": {
+      "job": 17,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "Kotlin, Java, Android SDK, Git"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 18,
+    "fields": {
+      "job": 18,
+      "education": "Master",
+      "experience": 4,
+      "skill": "React, Django, PostgreSQL, REST API"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 19,
+    "fields": {
+      "job": 19,
+      "education": "H.S.C",
+      "experience": 1,
+      "skill": "Networking, Hardware, Windows, Helpdesk"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 20,
+    "fields": {
+      "job": 20,
+      "education": "Master",
+      "experience": 3,
+      "skill": "Network Security, SIEM, Linux, Risk Assessment"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 21,
+    "fields": {
+      "job": 21,
+      "education": "H.S.C",
+      "experience": 0,
+      "skill": "Python, Pandas, Machine Learning, Jupyter"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 22,
+    "fields": {
+      "job": 22,
+      "education": "S.S.C",
+      "experience": 1,
+      "skill": "WordPress, PHP, CSS, WooCommerce"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 23,
+    "fields": {
+      "job": 23,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "After Effects, Premiere Pro, Illustration"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 24,
+    "fields": {
+      "job": 24,
+      "education": "H.S.C",
+      "experience": 3,
+      "skill": "Branding, Illustrator, Typography, Figma"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 25,
+    "fields": {
+      "job": 25,
+      "education": "Master",
+      "experience": 4,
+      "skill": "Figma, User Research, Prototyping, Design Systems"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 26,
+    "fields": {
+      "job": 26,
+      "education": "S.S.C",
+      "experience": 1,
+      "skill": "Premiere Pro, CapCut, Color Grading"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 27,
+    "fields": {
+      "job": 27,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "Content Writing, SEO, Bengali, English"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 28,
+    "fields": {
+      "job": 28,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "Instagram, Facebook Ads, Copywriting, Canva"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 29,
+    "fields": {
+      "job": 29,
+      "education": "H.S.C",
+      "experience": 3,
+      "skill": "SEO, Google Analytics, Keyword Research, Content"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 30,
+    "fields": {
+      "job": 30,
+      "education": "Master",
+      "experience": 5,
+      "skill": "Brand Strategy, Marketing, Communication, Analytics"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 31,
+    "fields": {
+      "job": 31,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "Research, Excel, SPSS, Presentation"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 32,
+    "fields": {
+      "job": 32,
+      "education": "Master",
+      "experience": 3,
+      "skill": "Audit, Compliance, Excel, Reporting"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 33,
+    "fields": {
+      "job": 33,
+      "education": "Master",
+      "experience": 3,
+      "skill": "Financial Modeling, Excel, Power BI, Accounting"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 34,
+    "fields": {
+      "job": 34,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "Payroll, Excel, Tax, HRIS"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 35,
+    "fields": {
+      "job": 35,
+      "education": "Master",
+      "experience": 2,
+      "skill": "Credit Analysis, Banking, Excel, Communication"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 36,
+    "fields": {
+      "job": 36,
+      "education": "Master",
+      "experience": 2,
+      "skill": "Taxation, VAT, Accounting, Excel"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 37,
+    "fields": {
+      "job": 37,
+      "education": "S.S.C",
+      "experience": 0,
+      "skill": "Communication, Bengali, Data Entry, CRM"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 38,
+    "fields": {
+      "job": 38,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "Technical Support, SQL, Communication, Jira"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 39,
+    "fields": {
+      "job": 39,
+      "education": "H.S.C",
+      "experience": 1,
+      "skill": "Client Success, Communication, CRM, Excel"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 40,
+    "fields": {
+      "job": 40,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "Recruitment, Sourcing, LinkedIn, Communication"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 41,
+    "fields": {
+      "job": 41,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "HR Operations, Attendance, Excel, Communication"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 42,
+    "fields": {
+      "job": 42,
+      "education": "H.S.C",
+      "experience": 1,
+      "skill": "Training, Coordination, MS Office, Communication"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 43,
+    "fields": {
+      "job": 43,
+      "education": "Master",
+      "experience": 3,
+      "skill": "Mathematics, Teaching, Exam Prep, Classroom Management"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 44,
+    "fields": {
+      "job": 44,
+      "education": "Master",
+      "experience": 2,
+      "skill": "Python, ICT, Teaching, Curriculum"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 45,
+    "fields": {
+      "job": 45,
+      "education": "Master",
+      "experience": 4,
+      "skill": "Academic Planning, Communication, Leadership, MS Office"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 46,
+    "fields": {
+      "job": 46,
+      "education": "H.S.C",
+      "experience": 1,
+      "skill": "Counseling, Sales, Communication, Data Entry"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 47,
+    "fields": {
+      "job": 47,
+      "education": "Master",
+      "experience": 2,
+      "skill": "Clinical Care, Emergency, Patient Management"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 48,
+    "fields": {
+      "job": 48,
+      "education": "H.S.C",
+      "experience": 2,
+      "skill": "Lab Testing, Sample Collection, Record Keeping"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 49,
+    "fields": {
+      "job": 49,
+      "education": "Master",
+      "experience": 2,
+      "skill": "Pharmacy, Inventory, Patient Counseling"
+    }
+  },
+  {
+    "model": "jobs.requirement",
+    "pk": 50,
+    "fields": {
+      "job": 50,
+      "education": "S.S.C",
+      "experience": 0,
+      "skill": "Reception, Data Entry, Communication, MS Office"
+    }
+  }
+]

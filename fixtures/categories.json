@@ -1,0 +1,66 @@
+[
+  {
+    "model": "jobs.category",
+    "pk": 1,
+    "fields": {
+      "title": "Software Development",
+      "description": "Engineering roles for web, mobile, and backend product teams."
+    }
+  },
+  {
+    "model": "jobs.category",
+    "pk": 2,
+    "fields": {
+      "title": "Design",
+      "description": "UI/UX, graphic, and brand design opportunities."
+    }
+  },
+  {
+    "model": "jobs.category",
+    "pk": 3,
+    "fields": {
+      "title": "Marketing",
+      "description": "Digital marketing, content, and brand growth roles."
+    }
+  },
+  {
+    "model": "jobs.category",
+    "pk": 4,
+    "fields": {
+      "title": "Finance & Accounting",
+      "description": "Accounting, audit, and financial operations roles."
+    }
+  },
+  {
+    "model": "jobs.category",
+    "pk": 5,
+    "fields": {
+      "title": "Customer Support",
+      "description": "Client service, CRM, and helpdesk positions."
+    }
+  },
+  {
+    "model": "jobs.category",
+    "pk": 6,
+    "fields": {
+      "title": "Human Resources",
+      "description": "Recruitment, people operations, and HR administration."
+    }
+  },
+  {
+    "model": "jobs.category",
+    "pk": 7,
+    "fields": {
+      "title": "Education",
+      "description": "Teaching and academic coordination roles."
+    }
+  },
+  {
+    "model": "jobs.category",
+    "pk": 8,
+    "fields": {
+      "title": "Healthcare",
+      "description": "Clinical and hospital support positions."
+    }
+  }
+]

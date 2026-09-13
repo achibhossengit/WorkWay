@@ -4,7 +4,9 @@ from django.core.mail import send_mail
 from apply_review.models import Application
 
 @receiver(post_save, sender=Application)
-def send_application_email(sender, instance, created, **kwargs):
+def send_application_email(sender, instance, created, raw=False, **kwargs):
+    if raw:
+        return
     if created:
         jobseeker_email = instance.jobseeker.user.email
         employer_email = instance.job.employer.user.email

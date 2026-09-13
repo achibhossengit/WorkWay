@@ -1,0 +1,192 @@
+[
+  {
+    "model": "users.customuser",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$1VnCxoL2dFj1vNStJkSiKm$2o8KErtEKWLY1btpxtoKzDC16DYCjfBNWJF7S5GgTu4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "tanvir_ahmed",
+      "first_name": "Tanvir",
+      "last_name": "Ahmed",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-04-12T08:00:00Z",
+      "email": "tanvir.ahmed@example.com",
+      "user_type": "Jobseeker",
+      "profile_picture": "",
+      "contact_number": "01720111222",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 8,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$1VnCxoL2dFj1vNStJkSiKm$2o8KErtEKWLY1btpxtoKzDC16DYCjfBNWJF7S5GgTu4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "sadia_islam",
+      "first_name": "Sadia",
+      "last_name": "Islam",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-03T08:00:00Z",
+      "email": "sadia.islam@example.com",
+      "user_type": "Jobseeker",
+      "profile_picture": "",
+      "contact_number": "01820222333",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 9,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$1VnCxoL2dFj1vNStJkSiKm$2o8KErtEKWLY1btpxtoKzDC16DYCjfBNWJF7S5GgTu4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "rakib_hasan",
+      "first_name": "Rakib",
+      "last_name": "Hasan",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-05-18T08:00:00Z",
+      "email": "rakib.hasan@example.com",
+      "user_type": "Jobseeker",
+      "profile_picture": "",
+      "contact_number": "01920333444",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 10,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$1VnCxoL2dFj1vNStJkSiKm$2o8KErtEKWLY1btpxtoKzDC16DYCjfBNWJF7S5GgTu4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "nabila_khan",
+      "first_name": "Nabila",
+      "last_name": "Khan",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-06-02T08:00:00Z",
+      "email": "nabila.khan@example.com",
+      "user_type": "Jobseeker",
+      "profile_picture": "",
+      "contact_number": "01620444555",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 11,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$1VnCxoL2dFj1vNStJkSiKm$2o8KErtEKWLY1btpxtoKzDC16DYCjfBNWJF7S5GgTu4=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "arif_mahmud",
+      "first_name": "Arif",
+      "last_name": "Mahmud",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2026-06-21T08:00:00Z",
+      "email": "arif.mahmud@example.com",
+      "user_type": "Jobseeker",
+      "profile_picture": "",
+      "contact_number": "01320555666",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.jobseeker",
+    "pk": 7,
+    "fields": {
+      "gender": "Male",
+      "resume": "",
+      "about": "Backend-focused developer looking for Django and API roles in Dhaka.",
+      "skills": [
+        "Python",
+        "Django",
+        "SQL",
+        "Git"
+      ],
+      "experiences": 3,
+      "current_address": "Mirpur, Dhaka"
+    }
+  },
+  {
+    "model": "users.jobseeker",
+    "pk": 8,
+    "fields": {
+      "gender": "Female",
+      "resume": "",
+      "about": "Product and visual designer with agency and startup experience.",
+      "skills": [
+        "Figma",
+        "Photoshop",
+        "UI Design",
+        "Prototyping"
+      ],
+      "experiences": 2,
+      "current_address": "Dhanmondi, Dhaka"
+    }
+  },
+  {
+    "model": "users.jobseeker",
+    "pk": 9,
+    "fields": {
+      "gender": "Male",
+      "resume": "",
+      "about": "Accountant experienced in reporting, payroll, and audit support.",
+      "skills": [
+        "Excel",
+        "Accounting",
+        "Tally",
+        "Reporting"
+      ],
+      "experiences": 4,
+      "current_address": "Agrabad, Chattogram"
+    }
+  },
+  {
+    "model": "users.jobseeker",
+    "pk": 10,
+    "fields": {
+      "gender": "Female",
+      "resume": "",
+      "about": "Teacher and academic coordinator seeking education roles in Sylhet.",
+      "skills": [
+        "English",
+        "Teaching",
+        "Classroom Management",
+        "Communication"
+      ],
+      "experiences": 5,
+      "current_address": "Zindabazar, Sylhet"
+    }
+  },
+  {
+    "model": "users.jobseeker",
+    "pk": 11,
+    "fields": {
+      "gender": "Male",
+      "resume": "",
+      "about": "Customer-facing professional targeting support, sales, and success roles.",
+      "skills": [
+        "Customer Support",
+        "CRM",
+        "Bengali",
+        "English"
+      ],
+      "experiences": 1,
+      "current_address": "Uttara, Dhaka"
+    }
+  }
+]
