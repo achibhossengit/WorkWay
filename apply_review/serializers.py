@@ -7,11 +7,35 @@ from users.serializers import absolute_file_url
 
 class ApplicationSerializer(ModelSerializer):
     job_title = serializers.CharField(source="job.title", read_only=True)
+    employer_id = serializers.IntegerField(source="job.employer_id", read_only=True)
+    employer_company = serializers.CharField(
+        source="job.employer.company", read_only=True
+    )
+    employer_username = serializers.CharField(
+        source="job.employer.user.username", read_only=True
+    )
 
     class Meta:
         model = Application
-        fields = '__all__'
-        read_only_fields = ['jobseeker', 'job_title', 'applied_at']
+        fields = [
+            'id',
+            'job',
+            'job_title',
+            'jobseeker',
+            'status',
+            'applied_at',
+            'employer_id',
+            'employer_company',
+            'employer_username',
+        ]
+        read_only_fields = [
+            'jobseeker',
+            'job_title',
+            'applied_at',
+            'employer_id',
+            'employer_company',
+            'employer_username',
+        ]
 
     def validate(self, attrs):
         if self.instance:
@@ -99,7 +123,22 @@ class ReviewSerializer(ModelSerializer):
             and Review.objects.filter(jobseeker=jobseeker, employer=employer).exists()
         ):
             raise serializers.ValidationError("You have already reviewed this employer.")
+        if jobseeker and employer:
+            finished = Application.objects.filter(
+                jobseeker=jobseeker,
+                job__employer=employer,
+                status__in=[Application.ACCEPT, Application.REJECTED],
+            ).exists()
+            if not finished:
+                raise serializers.ValidationError(
+                    "You can only review an employer after an application is accepted or rejected."
+                )
         return attrs
+
+    def update(self, instance, validated_data):
+        validated_data.pop('employer', None)
+        return super().update(instance, validated_data)
+
 
     def create(self, validated_data):
         validated_data['jobseeker'] = self.context['jobseeker']

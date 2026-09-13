@@ -20,7 +20,7 @@ class ApplicationViewSetForJobseeker(ModelViewSet):
     def get_queryset(self):
         return Application.objects.filter(
             jobseeker=self.kwargs.get("jobseeker_pk")
-        ).select_related("job")
+        ).select_related("job", "job__employer", "job__employer__user")
 
     def perform_destroy(self, instance):
         instance.status = Application.CANCELLED
