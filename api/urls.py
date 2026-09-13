@@ -6,7 +6,7 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from jobs.views import JobViewSet, CategoryViewSet, CategoryJobViewSet, EmployerJobViewSet
 from users.views import JobseekerViewSet, EmployerViewSet
-from apply_review.views import ApplicationViewSetForJobseeker, ApplicationViewSetForEmployer, ReviewViewSetForEmployer, ReviewViewSetForJobseeker
+from apply_review.views import ApplicationViewSetForJobseeker, ApplicationViewSetForEmployer, ReviewViewSetForEmployer, ReviewViewSetForJobseeker, PublicReviewViewSet
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -27,6 +27,7 @@ router = DefaultRouter()
 
 router.register('jobs', JobViewSet)
 router.register('categories', CategoryViewSet)
+router.register('reviews', PublicReviewViewSet, basename='reviews')
 router.register('jobseekers', JobseekerViewSet, basename='jobseeker')
 router.register('employers', EmployerViewSet, basename='employer')
 

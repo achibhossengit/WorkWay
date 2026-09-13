@@ -19,42 +19,58 @@ class CategorySerializer(ModelSerializer):
         fields = '__all__'
         
 class EmployerSerializer(ModelSerializer):
-    username = serializers.CharField(source='user.username', read_only=True)  # সরাসরি username যোগ করুন
+    id = serializers.IntegerField(source='user_id', read_only=True)
+    username = serializers.CharField(source='user.username', read_only=True)
     class Meta:
         model = Employer
-        fields = ['username', 'company', 'location']  # প্রাসঙ্গিক ফিল্ডগুলো ব্যবহার করুন
+        fields = ['id', 'username', 'company', 'location']
 
 class JobSerializer(ModelSerializer):
-    category = CategorySerializer()
-    employer = EmployerSerializer()
+    category = CategorySerializer(read_only=True)
+    category_id = serializers.PrimaryKeyRelatedField(
+        queryset=Category.objects.all(),
+        source='category',
+        write_only=True,
+    )
+    employer = EmployerSerializer(read_only=True)
     details = DetailSerializer()
     requirements = RequirementSerializer()
+
     class Meta:
         model = Job
-        fields = ['id', 'title', 'employer', 'category', 'published_at', 'details', 'requirements']
-        read_only_fields = ['employer']
+        fields = [
+            'id',
+            'title',
+            'employer',
+            'category',
+            'category_id',
+            'published_at',
+            'details',
+            'requirements',
+        ]
+        read_only_fields = ['employer', 'published_at']
 
     def create(self, validated_data):
         details = validated_data.pop('details')
         requirements = validated_data.pop('requirements')
-        # set job creator/ employer
         employer = self.context.get('employer')
+        if not employer:
+            raise serializers.ValidationError('Only employers can post jobs.')
         validated_data['employer'] = employer
         instance = super().create(validated_data)
-        # auto creating details & requirements of this job
         Detail.objects.create(job=instance, **details)
         Requirement.objects.create(job=instance, **requirements)
         return instance
-    
-    def update(self, instance, validated_data):
-        details = validated_data.pop('details')
-        requirements = validated_data.pop('requirements')
 
-        details_serializer = DetailSerializer()
-        requirements_serializer = RequirementSerializer()
-        details_serializer.update(instance.details, details)
-        requirements_serializer.update(instance.requirements, requirements)
-        
+    def update(self, instance, validated_data):
+        details = validated_data.pop('details', None)
+        requirements = validated_data.pop('requirements', None)
+
+        if details is not None:
+            DetailSerializer().update(instance.details, details)
+        if requirements is not None:
+            RequirementSerializer().update(instance.requirements, requirements)
+
         return super().update(instance, validated_data)
     
 
@@ -72,7 +88,6 @@ class NestedJobSerializer(ModelSerializer):
         # set job creator/ employer & category
         validated_data['employer'] = self.context.get('employer')
         validated_data['category'] = self.context.get('category')
-        print(validated_data)
         instance = super().create(validated_data)
         # auto creating details & requirements of this job
         Detail.objects.create(job=instance, **details)

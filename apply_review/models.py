@@ -33,3 +33,9 @@ class Review(models.Model):
     jobseeker = models.ForeignKey(JobSeeker, on_delete=models.CASCADE, related_name='reviews')
     ratings = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
     comment = models.TextField(blank=True, null=True)
+
+    class Meta:
+        unique_together = ('employer', 'jobseeker')
+
+    def __str__(self):
+        return f"Review by {self.jobseeker} for {self.employer}"

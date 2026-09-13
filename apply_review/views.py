@@ -1,5 +1,5 @@
-from rest_framework.viewsets import ModelViewSet
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from apply_review.models import Application, Review
 from users.models import JobSeeker
 from apply_review.serializers import ApplicationSerializer, ReviewSerializer, ApplicationSerializerForEmployer
@@ -49,7 +49,7 @@ class ApplicationViewSetForEmployer(ModelViewSet):
     def get_queryset(self):
         return Application.objects.filter(job=self.kwargs.get('job_pk')).exclude(
             status=Application.CANCELLED
-        )
+        ).select_related('jobseeker__user', 'job').order_by('-applied_at')
 
 
 class ReviewViewSetForJobseeker(ModelViewSet):
@@ -64,7 +64,9 @@ class ReviewViewSetForJobseeker(ModelViewSet):
     permission_classes = [IsAuthenticated, IsJobseekerOwnerOrAdminReadonly]
 
     def get_queryset(self):
-        return Review.objects.filter(jobseeker=self.kwargs.get('jobseeker_pk'))
+        return Review.objects.filter(
+            jobseeker=self.kwargs.get('jobseeker_pk')
+        ).select_related('jobseeker__user', 'employer__user')
 
     def get_serializer_context(self):
         context = super().get_serializer_context()
@@ -81,7 +83,18 @@ class ReviewViewSetForEmployer(ModelViewSet):
     """
     http_method_names = ['get', 'head', 'options']
     serializer_class = ReviewSerializer
-    permission_classes = [IsAuthenticated, IsEmployerOwnerOrAdminReadonly]
+    permission_classes = [AllowAny]
 
     def get_queryset(self):
-        return Review.objects.filter(employer=self.kwargs.get('employer_pk'))
+        return Review.objects.filter(
+            employer=self.kwargs.get('employer_pk')
+        ).select_related('jobseeker__user', 'employer__user').order_by('-id')
+
+
+class PublicReviewViewSet(ReadOnlyModelViewSet):
+    """Public list of jobseeker reviews about employers."""
+    permission_classes = [AllowAny]
+    serializer_class = ReviewSerializer
+    queryset = Review.objects.select_related(
+        'jobseeker__user', 'employer__user'
+    ).order_by('-id')

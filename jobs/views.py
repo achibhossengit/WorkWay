@@ -75,7 +75,11 @@ class EmployerJobViewSet(ModelViewSet):
         """
         Return jobs filtered by the employer's ID passed in the URL.
         """
-        return Job.objects.filter(employer=self.kwargs.get('employer_pk'))
+        return Job.objects.filter(
+            employer=self.kwargs.get('employer_pk')
+        ).select_related(
+            'employer__user', 'category', 'details', 'requirements'
+        ).order_by('-id')
 
 
 class CategoryJobViewSet(ModelViewSet):

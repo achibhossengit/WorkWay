@@ -1,0 +1,62 @@
+[
+  {
+    "model": "apply_review.review",
+    "pk": 1,
+    "fields": {
+      "employer": 1,
+      "jobseeker": 7,
+      "ratings": 5,
+      "comment": "The hiring process was clear and respectful. I always knew where I stood."
+    }
+  },
+  {
+    "model": "apply_review.review",
+    "pk": 2,
+    "fields": {
+      "employer": 1,
+      "jobseeker": 10,
+      "ratings": 4,
+      "comment": "Good communication from the team. Interview feedback came back quickly."
+    }
+  },
+  {
+    "model": "apply_review.review",
+    "pk": 3,
+    "fields": {
+      "employer": 2,
+      "jobseeker": 8,
+      "ratings": 5,
+      "comment": "A professional employer who values candidates. Highly recommended."
+    }
+  },
+  {
+    "model": "apply_review.review",
+    "pk": 4,
+    "fields": {
+      "employer": 3,
+      "jobseeker": 9,
+      "ratings": 4,
+      "comment": "Fair interviews and a realistic job description. Would apply again."
+    }
+  },
+  {
+    "model": "apply_review.review",
+    "pk": 5,
+    "fields": {
+      "employer": 2,
+      "jobseeker": 11,
+      "ratings": 5,
+      "comment": "They treated every applicant with care and explained the role honestly."
+    }
+  },
+  {
+    "model": "apply_review.review",
+    "pk": 6,
+    "fields": {
+      "employer": 4,
+      "jobseeker": 7,
+      "ratings": 3,
+      "comment": "Decent experience overall, though the process took a bit longer than expected."
+    }
+  }
+]
