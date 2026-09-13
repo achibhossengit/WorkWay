@@ -2,6 +2,7 @@ from pathlib import Path
 from datetime import timedelta
 from decouple import Csv, config
 import cloudinary
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -19,11 +20,12 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 AUTH_USER_MODEL = 'users.CustomUser'
 
-
-INTERNAL_IPS = config('INTERNAL_IPS', cast=Csv())
-
 CORS_ALLOWED_ORIGINS = config('CORS_ALLOWED_ORIGINS', cast=Csv())
 CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', cast=Csv())
+
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK': lambda request: DEBUG,
+}
 
 
 # Application definition
@@ -82,14 +84,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'WorkWay.wsgi.app'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT', cast=int),
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL'),
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
 
@@ -195,8 +194,8 @@ SSL_FRONTEND_URL = config(
     'SSL_FRONTEND_URL',
     default=f"{config('EMAIL_FRONTEND_PROTOCOL')}://{config('EMAIL_FRONTEND_DOMAIN')}",
 )
-FEATURED_JOB_AMOUNT = config('FEATURED_JOB_AMOUNT', default='100.00')
-FEATURED_JOB_DAYS = config('FEATURED_JOB_DAYS', default=7, cast=int)
+FEATURED_JOB_AMOUNT = '100.00'
+FEATURED_JOB_DAYS = 7
 
 
 # swagger config
