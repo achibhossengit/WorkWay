@@ -9,11 +9,13 @@ class Application(models.Model):
     PEDING = 'P'
     REVIEWED = 'R'
     ACCEPT = 'A'
+    REJECTED = 'X'
     CANCELLED = 'C'
     STATUS_CHOICES = [
         (PEDING, 'Pending'),
         (REVIEWED, 'Reviewed'),
         (ACCEPT, 'ACCEPT'),
+        (REJECTED, 'Rejected'),
         (CANCELLED, 'Cancelled'),
     ]
 

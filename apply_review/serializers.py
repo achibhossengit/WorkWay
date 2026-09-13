@@ -155,7 +155,10 @@ class ApplicationSerializerForEmployer(ModelSerializer):
             Application.PEDING,
             Application.REVIEWED,
             Application.ACCEPT,
+            Application.REJECTED,
         }
         if value not in allowed:
-            raise serializers.ValidationError('Status must be Pending, Reviewed, or Accept.')
+            raise serializers.ValidationError(
+                'Status must be Pending, Reviewed, Accept, or Rejected.'
+            )
         return value
