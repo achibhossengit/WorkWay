@@ -1,120 +1,187 @@
-# Work Way: Django REST Framework Project
+![WorkWay introduction banner](./docs/intro-banner.png)
 
-This project, named "Work Way," is a job portal platform built using Django and Django REST Framework (DRF). It allows employers to post job opportunities and manage applications, while job seekers can apply for jobs and manage their profiles. The platform includes features for job categorization, application reviews, and user management.
+**WorkWay API** — job portal backend
 
----
+[Live app](https://workway-client.vercel.app/) · [Live API](https://work-way.vercel.app/api/v1/) · [Swagger](https://work-way.vercel.app/api/v1/swagger/) · [ReDoc](https://work-way.vercel.app/api/v1/redoc/) · [Client Repo](https://github.com/achibhossengit/workway-client)
 
-## Features
+WorkWay is a full-stack job portal where employers post openings and manage applicants, and job seekers apply, track status, and review employers. Featured listings are sold through SSLCommerz.
 
-### User Management
-- Two user types: Employers and Job Seekers.
-- Employers can manage their job postings and review applications.
-- Job Seekers can apply for jobs, upload resumes, and manage applications.
+This repository is the **backend API**. It handles users, jobs, applications, reviews, email notifications, media, and payments. Storage is PostgreSQL; production media uses Cloudinary.
 
-### Job Management
-- Employers can create, update, and delete job postings.
-- Jobs are categorized into categories.
-- Detailed job descriptions, requirements, and statuses.
+Browse interactive docs on the live API: [Swagger](https://work-way.vercel.app/api/v1/swagger/) · [ReDoc](https://work-way.vercel.app/api/v1/redoc/).
 
-### Applications and Reviews
-- Job Seekers can apply for jobs and view application statuses.
-- Employers can review applications and provide ratings and comments.
+## ✨ Key Features
 
-### API Documentation
-- Swagger Documentation: https://work-way.vercel.app/api/v1/swagger/
-- ReDoc Documentation: https://work-way.vercel.app/api/v1/redoc/
-  
----
+- REST APIs for jobs, categories, employers, jobseekers, applications, reviews, and payments.
+- JWT auth via Djoser + SimpleJWT (registration, activation, password reset).
+- Role model: **Employer** and **Jobseeker** profiles created on signup.
+- Applications: Pending / Reviewed / Accept / Rejected / Cancelled; soft cancel + re-apply.
+- Emails on apply, re-apply, cancel (to employer) and status change (to jobseeker).
+- Reviews: jobseekers rate employers after a finished application; public review list.
+- Featured jobs: SSLCommerz payment extends `featured_until`.
+- Paginated list endpoints (`page`, optional `page_size`).
 
-## Installation and Setup
 
-1. Clone the repository:
-    ```bash
-    https://github.com/achibhossengit/WorkWay/
-    cd WorkWay
-    ```
 
-2. Install dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
+## 🚀 Tech Stack
 
-3. Apply migrations:
-    ```bash
-    python manage.py makemigrations
-    python manage.py migrate
-    ```
 
-4. Create a superuser:
-    ```bash
-    python manage.py createsuperuser
-    ```
+| Category   | Technology                                      |
+| ---------- | ----------------------------------------------- |
+| Runtime    | Python, Django 5.2, Django REST Framework       |
+| Auth       | Djoser, SimpleJWT (`Authorization: JWT …`)      |
+| Database   | PostgreSQL (`DATABASE_URL` via dj-database-url) |
+| Media      | Local disk (DEBUG) / Cloudinary (production)    |
+| Email      | Django SMTP (e.g. MailHog locally)              |
+| Payments   | SSLCommerz                                      |
+| Docs       | drf-yasg (Swagger / ReDoc)                      |
+| Deployment | Vercel (`WorkWay.wsgi.app`), WhiteNoise         |
 
-5. Start the development server:
-    ```bash
-    python manage.py runserver
-    ```
 
----
 
-## API Endpoints
 
-### Base URL
-`/api/v1/`
+## 🛠️ Installation & Setup
 
-### Authentication
-- `POST /auth/token/login/` - Obtain a token.
-- `POST /auth/token/logout/` - Logout.
+```bash
+git clone https://github.com/achibhossengit/workway-api.git
+cd workway-api
+python -m venv .venv
+# Windows: .venv\Scripts\activate
+# macOS/Linux: source .venv/bin/activate
+pip install -r requirements.txt
+```
 
-### Jobs
-- **List All Jobs**: `GET /jobs/`
-- **Create a Job**: `POST /jobs/` (Employers only)
-- **Retrieve a Job**: `GET /jobs/{id}/`
-- **Update a Job**: `PUT /jobs/{id}/` (Employers only)
-- **Delete a Job**: `DELETE /jobs/{id}/` (Employers only)
+Optional Docker services (Postgres + MailHog):
 
-### Categories
-- **List All Categories**: `GET /categories/`
-- **Create a Category**: `POST /categories/` (Admin only)
-- **Retrieve a Category**: `GET /categories/{id}/`
-- **Update a Category**: `PUT /categories/{id}/` (Admin only)
-- **Delete a Category**: `DELETE /categories/{id}/` (Admin only)
+```bash
+docker compose up -d
+```
 
-### Category-Specific Jobs
-- **List Jobs in a Category**: `GET /categories/{category_id}/jobs/`
+Create a `.env` file in the project root:
 
-### Applications
-- **List Applications by Jobseeker**: `GET /jobseekers/{jobseeker_id}/applications/`
-- **Apply for a Job**: `POST /jobseekers/{jobseeker_id}/applications/`
-- **Update an Application**: `PUT /jobseekers/{jobseeker_id}/applications/{id}/`
-- **Delete an Application**: `DELETE /jobseekers/{jobseeker_id}/applications/{id}/`
+```env
+SECRET_KEY=change-me
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+CORS_ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
+CSRF_TRUSTED_ORIGINS=http://localhost:8000,http://127.0.0.1:8000
 
-### Reviews
-- **List Reviews for Jobseeker**: `GET /jobseekers/{jobseeker_id}/reviews/`
-- **Add a Review for Jobseeker**: `POST /jobseekers/{jobseeker_id}/reviews/`
-- **List Reviews for Employer**: `GET /employers/{employer_id}/reviews/`
+DATABASE_URL=postgres://workway:workway@localhost:5432/workway
 
-### Employer-Specific Jobs
-- **List Jobs by Employer**: `GET /employers/{employer_id}/jobs/`
-- **List Applications for a Job**: `GET /employers/{employer_id}/jobs/{job_id}/applications/`
+CLOUD_NAME=
+API_KEY=
+API_SECRET=
 
----
+EMAIL_FRONTEND_PROTOCOL=http
+EMAIL_FRONTEND_DOMAIN=localhost:5173
+EMAIL_FRONTEND_SITE_NAME=WorkWay
 
-## API Documentation
-- **Swagger UI**: `/swagger/`
-- **ReDoc**: `/redoc/`
+EMAIL_HOST=localhost
+EMAIL_PORT=1025
+EMAIL_USE_TLS=False
+EMAIL_HOST_USER=
+EMAIL_HOST_PASSWORD=
 
----
+SSL_STORE_ID=
+SSL_STORE_PASSWD=
+SSL_IS_SANDBOX=True
+SSL_BACKEND_URL=http://127.0.0.1:8000
+SSL_FRONTEND_URL=http://localhost:5173
+```
 
-## Contributing
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature-name`
-3. Commit your changes: `git commit -m 'Add some feature'`
-4. Push to the branch: `git push origin feature-name`
-5. Open a pull request.
+```bash
+python manage.py migrate
+python manage.py loaddata employers jobseekers categories jobs applications reviews
+python manage.py runserver
+```
 
----
+Local base: [http://127.0.0.1:8000/api/v1/](http://127.0.0.1:8000/api/v1/)
 
-## License
-This project is licensed under the BSD License.
 
+| Resource            | URL                                            |
+| ------------------- | ---------------------------------------------- |
+| Swagger             | `/api/v1/swagger/`                             |
+| ReDoc               | `/api/v1/redoc/`                               |
+| Admin               | `/admin/`                                      |
+| MailHog UI (Docker) | [http://localhost:8025](http://localhost:8025) |
+
+
+
+
+## 📁 Project Structure
+
+```text
+api/              Routers, permissions, API wiring
+users/            CustomUser, Employer, JobSeeker
+jobs/             Category, Job, details, requirements
+apply_review/     Application, Review, email signals
+payments/         SSLCommerz featured-job flow
+WorkWay/          Settings, URLs, WSGI (`app` for Vercel)
+fixtures/         Seed data
+docker-compose.yml
+vercel.json
+docs/             README intro banner
+manage.py
+requirements.txt
+```
+
+
+
+## ⚙️ Workflows
+
+
+
+### 1. Authentication
+
+- Registration creates the matching Employer or Jobseeker profile.
+- Activation and password-reset emails use `EMAIL_FRONTEND_*` links.
+- Clients authenticate with JWT (`Authorization: JWT <access>`).
+
+
+
+### 2. Jobs & applications
+
+- Public job list supports category and search filters; featured jobs sort first.
+- Employers manage their postings and applicant statuses.
+- Jobseekers apply, cancel (soft), and re-apply when allowed.
+
+
+
+### 3. Reviews & featured payments
+
+- After Accept or Rejected, a jobseeker may leave one review per employer.
+- Featured-job checkout runs through SSLCommerz and extends `featured_until`.
+
+
+
+## 🗃️ Database
+
+PostgreSQL via `DATABASE_URL` (example: `postgres://USER:PASSWORD@HOST:PORT/NAME`).
+
+
+| App            | Main models                                |
+| -------------- | ------------------------------------------ |
+| `users`        | `CustomUser`, `Employer`, `JobSeeker`      |
+| `jobs`         | `Category`, `Job`, `Detail`, `Requirement` |
+| `apply_review` | `Application`, `Review`                    |
+| `payments`     | `Payment`                                  |
+
+
+
+
+## 🌐 Deployment
+
+The API is deployed on **Vercel** using `vercel.json` and the WSGI entry `WorkWay.wsgi.app`.
+
+1. Push this repo to GitHub and import the project in Vercel.
+2. Set the same environment variables as `.env` (production values):
+  - `SECRET_KEY`, `DEBUG=False`
+  - `ALLOWED_HOSTS`, `CORS_ALLOWED_ORIGINS`, `CSRF_TRUSTED_ORIGINS`
+  - `DATABASE_URL` (hosted Postgres)
+  - `CLOUD_NAME`, `API_KEY`, `API_SECRET` (Cloudinary media)
+  - `EMAIL_*` and `EMAIL_FRONTEND_*` (real SMTP + live client domain)
+  - `SSL_*` payment settings with public `SSL_BACKEND_URL` / `SSL_FRONTEND_URL`
+3. Deploy. Vercel builds from `WorkWay/wsgi.py` (Python 3.11).
+4. Run migrations against the production database (`python manage.py migrate`) from a machine that can reach `DATABASE_URL`.
+
+Static files are served with **WhiteNoise**. With `DEBUG=False`, uploaded media uses **Cloudinary**.
