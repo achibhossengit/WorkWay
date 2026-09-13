@@ -18,6 +18,14 @@ class ApplicationSerializer(ModelSerializer):
             return attrs
         job = attrs.get("job")
         jobseeker = self.context.get("job_seeker")
+        if jobseeker is not None and not isinstance(jobseeker, JobSeeker):
+            jobseeker = JobSeeker.objects.filter(pk=jobseeker).first()
+        elif isinstance(jobseeker, JobSeeker):
+            jobseeker.refresh_from_db()
+        if jobseeker and not jobseeker.resume:
+            raise serializers.ValidationError(
+                "Upload a resume before applying for a job."
+            )
         if job and jobseeker:
             existing = Application.objects.filter(job=job, jobseeker=jobseeker).first()
             if existing and existing.status != Application.CANCELLED:

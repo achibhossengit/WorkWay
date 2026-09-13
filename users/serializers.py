@@ -39,11 +39,22 @@ class JobSeekerProfileSerializer(ModelSerializer):
     def to_internal_value(self, data):
         if hasattr(data, "copy"):
             data = data.copy()
-        resume = data.pop("resume", None) if isinstance(data, dict) else None
+        resume = data.pop("resume", serializers.empty) if isinstance(data, dict) else serializers.empty
         validated = super().to_internal_value(data)
-        if resume:
+        if resume is not serializers.empty and resume not in (None, "", "null"):
             validated["resume"] = resume
         return validated
+
+    def update(self, instance, validated_data):
+        resume = validated_data.pop("resume", serializers.empty)
+        instance = super().update(instance, validated_data)
+        if resume is not serializers.empty and resume not in (None, "", "null"):
+            if instance.resume:
+                instance.resume.delete(save=False)
+            instance.resume = resume
+            instance.save(update_fields=["resume"])
+        return instance
+
 
 class EmployerProfileSerializer(ModelSerializer):
     class Meta:
@@ -66,6 +77,11 @@ class CustomUserSerializer(ModelSerializer):
 
     def to_internal_value(self, data):
         payload = {key: data.get(key) for key in data.keys()}
+        self._clear_resume = str(data.get("clear_resume", "")).lower() in (
+            "1",
+            "true",
+            "yes",
+        )
 
         for key in ("jobseeker", "employer"):
             value = payload.get(key)
@@ -74,7 +90,7 @@ class CustomUserSerializer(ModelSerializer):
 
         resume = data.get("resume")
         jobseeker_data = payload.get("jobseeker")
-        if resume:
+        if resume and not self._clear_resume:
             if isinstance(jobseeker_data, dict):
                 jobseeker_data = {**jobseeker_data, "resume": resume}
             else:
@@ -93,10 +109,18 @@ class CustomUserSerializer(ModelSerializer):
     def update(self, instance, validated_data):
         jobseeker_data = validated_data.pop("jobseeker", None)
         employer_data = validated_data.pop("employer", None)
+        clear_resume = getattr(self, "_clear_resume", False)
 
         if instance.user_type == "Employer" and employer_data:
             EmployerProfileSerializer().update(instance.employer, employer_data)
-        elif instance.user_type == "Jobseeker" and jobseeker_data:
-            JobSeekerProfileSerializer().update(instance.jobseeker, jobseeker_data)
+        elif instance.user_type == "Jobseeker":
+            if jobseeker_data:
+                JobSeekerProfileSerializer().update(instance.jobseeker, jobseeker_data)
+            if clear_resume:
+                jobseeker = instance.jobseeker
+                if jobseeker.resume:
+                    jobseeker.resume.delete(save=False)
+                jobseeker.resume = None
+                jobseeker.save(update_fields=["resume"])
 
         return super().update(instance, validated_data)
