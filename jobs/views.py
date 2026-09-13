@@ -70,6 +70,7 @@ class EmployerJobViewSet(ModelViewSet):
     """
     serializer_class = JobSerializer
     permission_classes = [IsEmployerOrReadOnly]
+    pagination_class = CustomPageNumberPagination
 
     def get_queryset(self):
         """
